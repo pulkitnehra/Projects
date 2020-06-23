@@ -48,12 +48,14 @@ def is_valid(bo, row, col, num):
     for j in range(len(bo)):
         if bo[row][j] == num:
             return False
-    #     check for same number in 3x3 grid
-    row_check = row // 3
-    col_check = col // 3
-
-    for i in range(row_check*3, row_check*3 + 3):
-        for j in range(col_check*3, col_check*3 + 3):
+    
+    # Check for same number in 3x3 grid
+    row_check = row - row % 3
+    col_check = col - col % 3
+    
+    # Check for one 3x3 grid     
+    for i in range(row_check, row_check + 3):
+        for j in range(col_check, col_check + 3):
             if bo[i][j] == num:
                 return False
     return True
