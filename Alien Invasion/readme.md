@@ -9,7 +9,7 @@
 ### Stopping the ship at the edge
   #### self.rect.right < self.screen_rect.right
       checks that the current position is less than the end of the main screen to the rhs
-  #### self.rect.left < 0
+  #### self.rect.left > 0
        checks that ship position at the lhs is less than 0
   
    
