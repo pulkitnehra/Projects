@@ -18,13 +18,14 @@ class AlienInvasion:
 
 		# imports the ship objects and it's attributes
 		self.ship = Ship(self)
-
+		
 
 
 	def run_game(self):
 		"""starts the main game"""
 		while True:
 			self._check_events()
+			self.ship.update()
 			self._update_screen()
 
 	def _check_events(self):
@@ -32,6 +33,21 @@ class AlienInvasion:
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
 					sys.exit()
+
+			# check for key press
+				elif event.type == pygame.KEYDOWN:
+					if event.key == pygame.K_RIGHT:
+						self.ship.moving_right = True
+					elif event.key == pygame.K_LEFT:
+						self.ship.moving_left = True
+
+			# check for key release
+				elif event.type == pygame.KEYUP:
+					if event.key == pygame.K_RIGHT:
+						self.ship.moving_right = False
+					elif event.key == pygame.K_LEFT:
+						self.ship.moving_left = False
+
 
 	def _update_screen(self):
 			# fill the surface with the background color
