@@ -14,3 +14,5 @@
   #### sprites, you can group related elements in your game and act on all the grouped elements at once
   
    
+### END
+     The main loop checks for player input, and then updates the position of the ship and any bullets that have been fired. We then use the updated positions to draw a new screen
