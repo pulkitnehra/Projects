@@ -11,5 +11,6 @@
       checks that the current position is less than the end of the main screen to the rhs
   #### self.rect.left > 0
        checks that ship position at the lhs is less than 0
+  #### sprites, you can group related elements in your game and act on all the grouped elements at once
   
    
