@@ -1,7 +1,9 @@
 import pygame
-class Ship:
+from pygame.sprite import Sprite
+class Ship(Sprite):
 	"""Displays the ship image"""
-	def __init__(self, ai_game, screen):
+	def __init__(self, ai_game):
+		super().__init__()
 		# initialize the starting point of the object
 		self.screen = ai_game.screen
 		self.settings = ai_game.settings
@@ -10,10 +12,6 @@ class Ship:
 		self.image = pygame.image.load('images/ship.bmp')
 		self.rect = self.image.get_rect()
 		self.rect.midbottom = self.screen_rect.midbottom
-		
-		
-		
-
 		self.x = float(self.rect.x)
 		# to control ship movement 
 		self.moving_right = False
@@ -29,7 +27,13 @@ class Ship:
 			self.x -= self.settings.ship_speed
 		self.rect.x = self.x
 
-		
+	
+	def center_ship(self):
+		""" Center the ship after loss of life """
+		self.rect.midbottom = self.screen_rect.midbottom
+		self.x = float(self.rect.x)
+
+
 
 	def blitme(self):
 			"""draw the ship at its current position"""
@@ -57,3 +61,5 @@ class Ship:
 		# # update the rect object value
 		# self.rect.centerx = self.center0
 		# self.rect.centery = self.center1
+
+		#%%
