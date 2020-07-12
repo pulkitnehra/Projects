@@ -12,6 +12,6 @@
 	## Scoreboard not showing high score
 	### fixed in alien_invasion.py
 
-# Issu 4:
+# Issue 4:
 	## Level not updating
 	###
